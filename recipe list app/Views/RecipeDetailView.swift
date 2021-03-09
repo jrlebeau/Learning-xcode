@@ -13,7 +13,7 @@ struct RecipeDetailView: View {
     
     var body: some View {
         
-        ScrollView {
+        ScrollView(.vertical) {
         
             VStack (alignment: .leading) {
                 
@@ -44,8 +44,8 @@ struct RecipeDetailView: View {
                         .padding([.bottom, .top], 5)
                     
                     ForEach(0..<recipe.directions.count, id: \.self) { index in
-                        
-                        Text(String(index+1) + ". " + recipe.directions[index])
+                        let line = String(index+1) + ". " + recipe.directions[index]
+                        Text(line)
                             .padding(.bottom, 5)
                     }
                 }
